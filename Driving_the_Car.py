@@ -1,9 +1,9 @@
 import random
 
 class Car:
-    def __init__(self, model, color, economy):
-        self.mileage = 0
-        self.fuel = 100
+    def __init__(self, model, color, economy, initial_mileage=0, initial_fuel=100):
+        self.mileage = initial_mileage
+        self.fuel = initial_fuel
         self.model = model
         self.color = color
         self.economy = economy
@@ -20,9 +20,9 @@ class Car:
     def distance_left(self):
         return (self.fuel / self.economy) * 100
 
-    def fuel_up(self):
-        self.fuel += 20
-        print("Fuelled car. Fuel reserve:", self.fuel)
+    def fuel_up(self, amount):
+        self.fuel += amount
+        print(f"Fuelled car. Fuel reserve: {self.fuel} litres.")
 
 cars = []
 
@@ -35,10 +35,9 @@ for _ in range(10):
     car = Car(model, color, economy)
     cars.append(car)
 
-
 for car in cars:
     car.drive(200)
-    car.fuel_up()
+    car.fuel_up(30)
     car.drive(100)
 
 max_fuel_car = max(cars, key=lambda x: x.fuel)
