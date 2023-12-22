@@ -45,5 +45,5 @@ max_fuel_car = max(cars, key=lambda x: x.fuel)
 
 print(f"\nThe car with the largest remaining fuel: {max_fuel_car.color} {max_fuel_car.model}")
 print(f"Fuel reserve: {max_fuel_car.fuel} litres.")
-print(f"Mileage: {max_fuel_car.mileage} км.")
+print(f"Mileage: {max_fuel_car.mileage} km.")
 print(f"The remaining fuel allows you to drive more {max_fuel_car.distance_left()} km.")
